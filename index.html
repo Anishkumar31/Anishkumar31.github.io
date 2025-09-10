@@ -6,8 +6,6 @@
     <title>Anish Kumar | AI & Data Science Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Chart.js CDN (still included for potential future use or if other parts need it) -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Google Fonts for 'Inter' -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,44 +122,6 @@
             font-weight: bold; /* Make the dynamic text bold */
         }
 
-        /* Styles for the new tabbed skills section */
-        .tab-button {
-            padding: 10px 20px;
-            border-radius: 9999px; /* Fully rounded */
-            background-color: #1e293b; /* slate-800 */
-            color: #cbd5e1; /* slate-300 */
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid transparent; /* Default transparent border */
-        }
-
-        .tab-button:hover {
-            background-color: #334155; /* slate-700 */
-            color: #e2e8f0; /* slate-200 */
-        }
-
-        .tab-button.active {
-            background-color: var(--accent); /* violet-500 */
-            color: white;
-            border-color: var(--accent); /* Active border color */
-            box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3); /* Subtle shadow for active tab */
-        }
-
-        .tab-content {
-            display: none; /* Hidden by default */
-            animation: fadeIn 0.5s ease-out; /* Fade in animation */
-        }
-
-        .tab-content.active {
-            display: block; /* Show when active */
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         /* Social icon with text styling */
         .social-text-icon-btn {
             display: inline-flex;
@@ -197,13 +157,13 @@
         <nav class="flex justify-between items-center px-6 py-3 bg-gray-900 rounded-full mb-12 max-w-2xl mx-auto shadow-xl m-4 glass-card">
             <!-- Circular 'A' icon with updated styling -->
             <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white text-3xl font-bold">A</div>
-            <div class="flex items-center space-x-3"> <!-- Changed to flex and space-x-3 for consistent gap -->
-                <a href="#about-me" class="text-white hover:text-violet-300 transition-colors text-base">About Me</a>
-                <a href="#projects" class="text-white hover:text-violet-300 transition-colors text-base">Projects</a>
-                <a href="#timeline" class="text-white hover:text-violet-300 transition-colors text-base">Certifications</a>
+            <div class="flex items-center space-x-4 md:space-x-6"> <!-- Adjusted spacing for medium screens and up -->
+                <a href="#about-me-section" class="text-white hover:text-violet-300 transition-colors text-base">About Me</a>
+                <a href="#projects-section" class="text-white hover:text-violet-300 transition-colors text-base">Projects</a>
+                <a href="#timeline-section" class="text-white hover:text-violet-300 transition-colors text-base">Certifications</a>
                 <a href="#contact-section" class="text-white hover:text-violet-300 transition-colors text-base">Contact</a>
-                <!-- Resume Button with new icon - now an anchor tag with the provided link -->
-                <a href="https://drive.google.com/file/d/1yvsxVMKNbug8aHQVpvCaPJ-OjOsTZuL2/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full shadow-lg transition-colors flex items-center space-x-2 text-base">
+                <!-- Resume Button now links to an internal section -->
+                <a href="https://drive.google.com/file/d/1ZRh7Gv3s-nLPyLwAX7WFmNE5VqqOyyck/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full shadow-lg transition-colors flex items-center space-x-2 text-base">
                     <!-- Inline SVG for the cloud-download icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-download w-5 h-5">
                         <path d="M12 17V3m0 14-4-4m4 4 4-4m-4 4a5 5 0 0 1-5-5v-1a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v1a5 5 0 0 1-5 5Z"/>
@@ -214,7 +174,7 @@
         </nav>
 
         <!-- Header Section -->
-        <header class="text-center mb-16 md:mb-20 py-16">
+        <header id="about-me-section" class="text-center mb-16 md:mb-20 py-16">
             <div class="relative z-10">
                 <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight">Hey, I'm <span class="text-6xl md:text-8xl">Anish</span><span class="text-blue-500">.</span></h1>
                 <!-- Dynamic title will be inserted here -->
@@ -243,18 +203,18 @@
             </div>
         </header>
         
-        <!-- Highlights Section (kept for structure, but content is now in Achievements) -->
-        <section class="mb-16 md:mb-20">
+        <!-- Awards & Recognition Section -->
+        <section id="achievements-section" class="mb-16 md:mb-20 fade-in-section" data-section>
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-white">Highlights</h2>
+                <h2 class="text-3xl font-bold text-white">Awards & Recognition</h2>
+                <p class="max-w-2xl mx-auto mt-2 text-slate-400">Highlights and key achievements from my academic and project work.</p>
             </div>
-            <div id="highlights-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                <!-- Highlight items populated by JavaScript -->
+            <div id="achievements-container" class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="mb-16 md:mb-20 fade-in-section" data-section>
+        <section id="projects-section" class="mb-16 md:mb-20 fade-in-section" data-section>
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-bold text-white">Project Showcase</h2>
                 <p class="max-w-2xl mx-auto mt-2 text-slate-400">An interactive look at my key projects. I've applied a range of technologies to solve unique problems, from digital text conversion to emotion-based music recommendation. Click a project to see details.</p>
@@ -268,7 +228,7 @@
         </section>
 
         <!-- Skills Section with a new grid of cards style -->
-        <section id="skills" class="mb-16 md:mb-20 fade-in-section" data-section>
+        <section id="skills-section" class="mb-16 md:mb-20 fade-in-section" data-section>
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-bold text-white">Skills & Expertise</h2>
                 <p class="max-w-2xl mx-auto mt-2 text-slate-400">My technical proficiencies and tools that drive my projects and learning.</p>
@@ -279,7 +239,7 @@
         </section>
 
         <!-- Career & Education Timeline Section -->
-        <section id="timeline" class="mb-16 md:mb-20 fade-in-section" data-section>
+        <section id="timeline-section" class="mb-16 md:mb-20 fade-in-section" data-section>
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-white">Career & Education Timeline</h2>
                 <p class="max-w-2xl mx-auto mt-2 text-slate-400">My academic journey and key certifications, showcasing a consistent path of learning and achievement in computer science and AI.</p>
@@ -288,12 +248,8 @@
             <div id="timeline-container" class="max-w-3xl mx-auto relative border-l-2 border-slate-700 pl-8 space-y-6"></div>
         </section>
 
-        <!-- Achievements & Recognition Section -->
-        <!-- Each achievement item now has fade-in-section for staggered animation -->
-        <section id="achievements-container" class="mb-16 md:mb-20"></section>
-
         <!-- Contact Section -->
-        <footer id="contact-section" class="glass-card p-8 md:p-12 text-center">
+        <footer id="contact-section" class="glass-card p-8 md:p-12 text-center fade-in-section" data-section>
             <!-- This section content will be dynamically managed by JavaScript -->
         </footer>
     </div>
@@ -314,12 +270,12 @@
             const portfolioData = {
                 personal: {
                     name: 'Anish Kumar',
-                    titles: ['Developer', 'AI & Data Science Engineer', 'AI Engineer'],
-                    email: 'anishkumar31804@gmail.com',
-                    phone: '+916287648153',
+                    titles: ['Data Anaylst Engineer', 'AI & Data Science Engineer', 'Software Engineer'],
+                    email: 'Anishkumar31804@gmail.com',
+                    phone: '+91-6287648153',
                     linkedin: 'https://www.linkedin.com/in/anish-kumar-71b54022b',
                     github: 'https://github.com/Anishkumar31',
-                    twitter: 'https://x.com/AnishKu72099444?t=Y5ZPeQCkkEqy38JB6Bbj4g&s=09', // Updated Twitter link
+                    twitter: 'https://x.com/AnishKu72099444?t=Y5ZPeQCkkEqy38JB6Bbj4g&s=09',
                     about: "As a recent B.Tech graduate in Computer Science with a specialization in Artificial Intelligence and Data Science, I'm excited about creating new solutions for real-world problems. I have a strong foundation in Python, machine learning, and AI frameworks, demonstrated through projects like a handwritten text converter that received the Best Paper award at IEEE ICKECS 2025."
                 },
                 highlights: [
@@ -328,33 +284,33 @@
                     { icon: '🧠', title: 'AI & Machine Learning', subtitle: 'Core Specialization' }
                 ],
                 projects: {
-                    project1: { title: 'From Handwriting to Hypertext: A Seamless Approach to Digital Text Conversion', date: 'May 2025', award: '🏆 Awarded Best Paper at IEEE ICKECS 2025', description: ['Developed a software application to convert handwritten text into editable digital formats.', 'Focused on accurately converting handwritten drawings and mathematical expressions.', 'Implemented error handling for clean output.', 'Created a user-friendly interface with Streamlit for real-time uploads.'], stack: ['Python', 'OpenCV', 'Tesseract OCR', 'Streamlit'] },
-                    project2: { title: 'Music Recommendation - Using Facial Recognition', date: 'May 2024', award: '📈 35% improvement in recommendation accuracy.', description: ['Developed a web app to capture user facial expressions via webcam.', 'Used a pre-trained CNN to detect emotions.', 'Recommends music based on detected emotion, boosting user satisfaction by 20%.'], stack: ['Python', 'CNN', 'Flask', 'OpenCV'] },
-                    project3: { title: 'MASK DETECTION using CNN', date: 'Sep 2024', award: null, description: ['Developed a real-time face mask detection system.', 'Implemented a CNN to accurately identify mask-wearing.', 'Focused on feature extraction, classification accuracy, and UI integration.'], stack: ['OpenCV', 'Keras', 'Flask', 'TensorFlow'] }
+                    project1: { title: 'From Handwriting to Hypertext: A Seamless Approach to Digital Text Conversion', date: 'May 2025', award: '🏆 Awarded Best Paper at IEEE ICKECS 2025', description: ['Developed a software application using Python, OpenCV, and Tesseract OCR to convert handwritten text into editable digital formats.', 'Focused on accurately converting handwritten drawings and mathematical expressions to ensure comprehensive digitalization.', 'Implemented error handling and formatting for clean and precise output.', 'Created a user-friendly interface with Streamlit for real-time image uploads and text display.'], stack: ['Python', 'OpenCV', 'Tesseract OCR', 'Streamlit'] },
+                    project2: { title: 'Music Recommendation - Using Facial Recognition', date: 'May 2024', award: '📈 35% improvement in recommendation accuracy.', description: ['Developed a web application using Python and a pre-trained CNN model to capture user facial expressions via a webcam.', 'Detected user emotions from images to recommend music accordingly.', 'Achieved a 35% improvement in music recommendation accuracy and a 20% boost in user satisfaction.'], stack: ['Python', 'CNN', 'Flask', 'OpenCV'] },
+                    project3: { title: 'MASK DETECTION using CNN', date: 'Sep 2024', award: null, description: ['Developed a real-time face mask detection system using OpenCV, Keras, Flask, and TensorFlow.', 'Implemented a Convolutional Neural Network (CNN) to accurately identify whether a person is wearing a mask.', 'Focused on feature extraction, classification accuracy, and UI integration.'], stack: ['OpenCV', 'Keras', 'Flask', 'TensorFlow'] }
                 },
                 // Updated skills data structure for textual display
                 skills: [
                     { category: 'Programming Languages', items: ['Python', 'C', 'Java', 'JavaScript'] },
-                    { category: 'AI/ML Frameworks', items: ['TensorFlow', 'Keras', 'Scikit-learn', 'Numpy', 'Pandas'] },
-                    { category: 'Libraries & Tools', items: ['OpenCV', 'Streamlit', 'Flask', 'Git', 'Jupyter'] },
+                    { category: 'AI/ML Frameworks', items: ['AI', 'Machine Learning', 'CNN', 'OpenCV', 'TensorFlow', 'Keras', 'Scikit-learn', 'Numpy', 'Pandas', 'NLTK'] },
+                    { category: 'Office & Analytics Tools', items: ['MS Excel', 'MS PowerPoint', 'Power BI', 'Tableau', 'Jupyter Notebook'] },
+                    { category: 'Libraries & Tools', items: ['Streamlit', 'Git', 'GitHub', 'Flask'] },
                     { category: 'Database', items: ['MySQL'] },
-                    { category: 'Concepts', items: ['Machine Learning', 'Deep Learning', 'Data Science', 'Computer Vision'] },
-                    { category: 'DevOps', items: ['Docker', 'Kubernetes', 'CI/CD', 'AWS (basics)'] },
                     { category: 'Interpersonal Skills', items: ['Teamwork', 'Problem-Solving', 'Adaptability', 'Decision-Making'] } // Added Interpersonal Skills
                 ],
                 // Timeline data sorted by date in descending order
                 timeline: [
                     { date: '2025-06-01', type: 'Certification', title: 'Program in Java Full Stack Development', source: 'Capgemini-EduBridge', imageUrl: 'https://i.postimg.cc/Fz4T5vHg/EBEON01251031730.png' },
+                    { date: '2025-05-01', type: 'Certification', title: 'Data Analytics with Python', source: 'NPTEL', imageUrl: 'https://placehold.co/800x600/1e293b/a5f3fc?text=NPTEL+Certificate' },
                     { date: '2025-04-01', type: 'Certification', title: 'Paper Presentation Certificate', source: 'IEEE ICKECS 2025', imageUrl: 'https://i.postimg.cc/ZKHs4dVm/ICKECS-2025-Best-paper-Award-Certificate-for-156.png' },
-                    { date: '2024-12-01', type: 'Certification', title: 'Microsoft Azure AI-900', source: 'Achieved', imageUrl: 'https://i.postimg.cc/fW6xfNq1/1734429424900.png' },
-                    { date: '2024-07-01', type: 'Certification', title: 'Data Visualisation', source: 'TATA-Forage', imageUrl: 'https://i.postimg.cc/1tbNBGBD/1720206453849.png' },
+                    { date: '2024-12-01', type: 'Certification', title: 'Microsoft Certified: Azure AI Fundamentals (AI-900)', source: 'Achieved', imageUrl: 'https://i.postimg.cc/fW6xfNq1/1734429424900.png' },
+                    { date: '2024-07-01', type: 'Certification', title: 'Data Visualisation: Empowering Business with Effective Insight', source: 'TATA-Forage', imageUrl: 'https://i.postimg.cc/1tbNBGBD/1720206453849.png' },
                     { date: '2023-05-01', type: 'Certification', title: 'Machine Learning with Python', source: 'IBM (Coursera)', imageUrl: 'https://i.postimg.cc/d3MLrqQB/Coursera-JKVT6-SVPMEGR.png' },
                     { date: '2021-08-01', type: 'Education', title: 'B.Tech in CS & Eng (AI & Data Science)', source: 'Reva University, Bangalore (CGPA: 8.39/10)' },
                     { date: '2021-04-01', type: 'Education', title: 'Intermediate (XIIth)', source: 'Loyola Convent School, Ranchi (73.5%)' },
                     { date: '2019-04-01', type: 'Education', title: 'Matriculation (Xth)', source: 'Cambridge School, Dumraon (72%)' }
                 ].sort((a, b) => new Date(b.date) - new Date(a.date)), // Ensure timeline is sorted by date
                 achievements: [
-                    { icon: '🏆', title: 'Best Paper Award', subtitle: 'IEEE ICKECS 2025', imageUrl: 'https://i.postimg.cc/ZKHs4dVm/ICKECS-2025-Best-paper-Award-Certificate-for-156.png' },
+                    { icon: '🏆', title: 'Best Paper Award', subtitle: 'IEEE ICKECS 2025 for the paper "From Handwriting to Hypertext"' },
                     { icon: '🏅', title: 'Foss Hackathon', subtitle: 'Participation Certificate' },
                     { icon: '🏅', title: 'Smart India Hackathon (SIH)', subtitle: 'Participation Certificate' }
                 ]
@@ -443,16 +399,25 @@
                 typeText(titles[currentTitleIndex]);
             }
 
-            // Function to render the highlights section (still here for structural consistency)
-            function renderHighlights() {
-                const container = document.getElementById('highlights-container');
-                // Apply fade-in-section to each individual highlight card
-                container.innerHTML = portfolioData.highlights.map(h => `
-                    <div class="glass-card p-6 rounded-2xl text-center fade-in-section" data-section>
-                        <div class="text-4xl mb-3">${h.icon}</div>
-                        <h3 class="font-bold text-white">${h.title}</h3>
-                        <p class="text-sm text-slate-400">${h.subtitle}</p>
-                    </div>`).join('');
+            // Function to render the achievements section
+            function renderAchievements() {
+                const container = document.getElementById('achievements-container');
+                const allAchievements = [...portfolioData.highlights, ...portfolioData.achievements];
+                // Apply fade-in-section to each individual achievement item
+                container.innerHTML = allAchievements.map(a => {
+                    const viewButton = a.imageUrl ? 
+                        `<button class="view-cert-btn mt-2 text-sm bg-violet-500 text-white font-semibold py-1 px-3 rounded-md hover:bg-violet-600 transition-colors" data-img-url="${a.imageUrl}">View Certificate</button>` : '';
+                    
+                    return `
+                    <div class="glass-card p-6 rounded-xl flex items-center space-x-4 fade-in-section" data-section>
+                        <div class="text-3xl">${a.icon}</div>
+                        <div>
+                            <h3 class="font-bold text-white">${a.title}</h3>
+                            <p class="text-sm text-slate-400">${a.subtitle}</p>
+                            ${viewButton}
+                        </div>
+                    </div>`;
+                }).join('');
             }
 
             // Function to render the projects section and handle interactions
@@ -530,26 +495,6 @@
                             <p class="text-sm text-slate-400">${new Date(item.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}</p>
                             <h4 class="font-bold text-white mt-1">${icon} ${item.title}</h4>
                             <p class="text-sm text-slate-300">${item.source}</p>
-                            ${viewButton}
-                        </div>
-                    </div>`;
-                }).join('');
-            }
-
-            // Function to render the achievements section
-            function renderAchievements() {
-                const container = document.getElementById('achievements-container');
-                // Apply fade-in-section to each individual achievement item
-                container.innerHTML = portfolioData.achievements.map(a => {
-                    const viewButton = a.imageUrl ? 
-                        `<button class="view-cert-btn mt-2 text-sm bg-violet-500 text-white font-semibold py-1 px-3 rounded-md hover:bg-violet-600 transition-colors" data-img-url="${a.imageUrl}">View Certificate</button>` : '';
-                    
-                    return `
-                    <div class="glass-card p-6 rounded-xl flex items-center space-x-4 fade-in-section" data-section>
-                        <div class="text-3xl">${a.icon}</div>
-                        <div>
-                            <h3 class="font-bold text-white">${a.title}</h3>
-                            <p class="text-sm text-slate-400">${a.subtitle}</p>
                             ${viewButton}
                         </div>
                     </div>`;
@@ -660,11 +605,10 @@
             // --- INITIALIZE PAGE COMPONENTS ---
             // Call all rendering and initialization functions when the DOM is ready
             renderHeader();
-            renderHighlights(); // This function will now render the old highlights data
+            renderAchievements();
             renderProjects();
             renderSkills();
             renderTimeline();
-            renderAchievements(); // This function will now render the new achievements data
             initContactSection();
             initModal();
             initScrollAnimations();
